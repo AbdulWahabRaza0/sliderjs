@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+p {
+  margin: 0px;
+}
+h3 {
+  margin-bottom: 5px;
+}
+#prev-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: 100;
+}
+#next-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: 100;
+}
+.swiper {
+  display: flex;
+  flex-direction: row;
+  /* height: 400px; */
+  width: 98vw;
+  position: relative;
+}
+.swiper #prev-btn {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  cursor: pointer;
+}
+.swiper #next-btn {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  cursor: pointer;
+}
+.name {
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+.role {
+  color: gray;
+  font-size: 12px;
+}
+.quote {
+  font-size: 19px;
+  margin-top: 5vh;
+}
+.swiper-wrapper {
+  height: 85vh;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: start;
+  gap: 2vw;
+  margin-left: 5vw;
+}
+.swiper-slide {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 20px;
+  transition: opacity 0.5s ease-in-out;
+  position: relative;
+}
+.my-transition-image {
+  animation: ImgSlideNext 0.7s linear;
+}
+.my-transition-image-prev {
+  animation: ImgAnimPrev 0.9s linear;
+}
+
+.my-transition-text {
+  animation: textAnim 3s linear;
+}
+@keyframes textAnim {
+  0%,
+  7% {
+    transform: translateY(-30%) rotateX(90deg);
+  }
+  15% {
+    transform: translateY(-25%) rotateX(80deg);
+  }
+  20% {
+    transform: translateY(-20%) rotateX(60deg);
+  }
+  25% {
+    transform: translateY(-15%) rotateX(40deg);
+  }
+  30% {
+    transform: translateY(-10%) rotateX(20deg);
+  }
+  35% {
+    transform: translateY(-5%) rotateX(10deg);
+  }
+  40%,
+  100% {
+    transform: translateY(0%) rotateX(0);
+  }
+}
+
+@keyframes ImgSlideNext {
+  0% {
+    transform: translateX(-82%) translateY(34%) scaleY(0.331) scaleX(0.5);
+  }
+  30% {
+    transform: translateX(-80%) translateY(31%) scaleY(0.37) scaleX(0.5);
+  }
+  50% {
+    transform: translateX(-78%) translateY(28%) scaleY(0.41) scaleX(0.5);
+  }
+}
+@keyframes ImgAnimPrev {
+  0% {
+    transform: translateX(180%) translateY(-96%) scaleY(2.9) scaleX(2.1);
+  }
+  30% {
+    transform: translateX(180%) translateY(-98.5%) scaleY(2.95) scaleX(2.1);
+  }
+  100% {
+    transform: translateX(0%) translateY(0%) scaleY(1) scaleX(1);
+  }
+  /* 30% {
+    transform: translateX(-80%) translateY(31%) scaleY(0.37) scaleX(0.4222);
+  }
+  50% {
+    transform: translateX(-82%) translateY(34%) scaleY(0.331) scaleX(0.4222);
+  } */
+}
+.swiper-slide.hidden {
+  display: none;
+  opacity: 0;
+}
+.swiper-slide img {
+  height: 216px;
+  width: 147px;
+}
+.info-div {
+  display: none;
+}
+.inside-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+.footer-inside-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+.footer-inside-info img {
+  height: 55px;
+  width: 55px;
+}
+
+/* responsive  */
+.image-wrapper-resp {
+  position: relative;
+}
+.content-wrapper-resp {
+  background-color: white;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 140px;
+}
+.content-wrapper-resp h3 {
+  font-size: 21px;
+  line-height: 21px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.content-wrapper-resp p {
+  margin-bottom: 0px;
+}
+.icon-wraper-resp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.icon-wraper-resp img {
+  width: 30px;
+  height: 30px;
+}
+@media screen and (max-width: 690px) {
+  /* Your styles go here */
+  .quote {
+    font-size: 17px;
+    margin-top: 0px;
+  }
+  .name {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .role {
+    color: gray;
+    margin-top: 0px;
+  }
+  .swiper-slide {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .swiper-wrapper {
+    height: 95vh;
+  }
+  .swiper {
+    justify-content: center;
+    height: 100vh;
+    width: 96%;
+    position: static;
+  }
+  #prev-btn {
+    width: auto;
+    height: auto;
+  }
+  #next-btn {
+    width: auto;
+    height: auto;
+  }
+}
